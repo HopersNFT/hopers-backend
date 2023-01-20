@@ -1,13 +1,14 @@
 import express, { Request, Response } from 'express';
 import { catchAsync, pick } from '../utils';
 import { cache } from '../controllers';
+import * as constants from '../constants';
 
 const routes = express.Router();
 
 routes.get(
     '/',
     catchAsync((_req: Request, res: Response) => {
-        res.status(200).json({ success: true });
+        res.status(200).json({ success: true, constants });
     }),
 );
 
