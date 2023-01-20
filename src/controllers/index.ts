@@ -10,7 +10,8 @@ const resultHandler = (data) => {
     cache = { ...cache, ...data };
 };
 
-const main = async () => {
+const main = () => {
+    console.log('---------- start new fetching ----------');
     try {
         fetchCollectionInfo().then(resultHandler);
         fetchMarketplaceNFTs().then(resultHandler);
