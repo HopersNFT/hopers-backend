@@ -9,7 +9,7 @@ const getMin = (number: number, max?: number): number => {
 };
 
 const fetchCollectionInfo = async () => {
-    let result: any = {};
+    let collectionInfo: any = {};
     Collections.forEach(async (collection) => {
         let storeObject: CollectionStateType = {
             mintCheck: [],
@@ -155,10 +155,10 @@ const fetchCollectionInfo = async () => {
         };
         await fetchSaleHistory();
         storeObject.saleHistory = saleHistory;
-        result[collection.collectionId] = storeObject;
+        collectionInfo[collection.collectionId] = storeObject;
     });
 
-    return result;
+    return { collectionInfo };
 };
 
 export default fetchCollectionInfo;

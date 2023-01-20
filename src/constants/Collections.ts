@@ -708,5 +708,5 @@ export const MintContracts: string[] = [
 ];
 
 export const MarketplaceContracts: string[] = [
-    'juno1snfxvydpwpg990j5yenavw24pr9qthdsyvt5nyd49e4muqmthnpslxscnk',
+    'juno14umelpxlujja7lysyhufqdp2rlzyuvlek3lgz0v54wp0gyvwnp4s7f3sgs',
 ];

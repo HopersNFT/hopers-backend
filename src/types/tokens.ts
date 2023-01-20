@@ -1,3 +1,5 @@
+import { ChainTypes } from './chain';
+
 export enum TokenType {
     JUNO = 'ujuno',
     HOPE = 'hope',
@@ -13,3 +15,13 @@ export enum TokenType {
     BLUE = 'blue',
     WYND = 'wynd',
 }
+
+export type TokenStatusType = {
+    isNativeCoin: boolean;
+    isIBCCoin: boolean;
+    contractAddress?: string;
+    originChain?: ChainTypes;
+    chain: ChainTypes;
+    coinName?: string;
+    decimal?: number;
+};
