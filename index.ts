@@ -1,5 +1,5 @@
-import { app } from './config/express';
-import main from './controllers';
+import { app } from './src/config/express';
+import main from './src/controllers';
 
 const port = process.env.PORT || '5000';
 
