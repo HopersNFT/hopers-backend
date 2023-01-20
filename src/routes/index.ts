@@ -19,7 +19,8 @@ routes.get(
         const query = req.query?.fields || '';
         const fields = query ? String(query).split(',') : [];
         // const data = store.getData();
-        const data = await getAsync('cache');
+        let data = await getAsync('cache');
+        data = JSON.parse(data);
 
         res.status(200).json(fields.length ? pick(data, fields) : data);
     }),
@@ -30,7 +31,8 @@ routes.get(
         const query = req.query?.collectionIds || '';
         const collectionIds = query ? String(query).split(',') : [];
         // const data = store.getData();
-        const data = await getAsync('cache');
+        let data = await getAsync('cache');
+        data = JSON.parse(data);
         const collectionBidsInfo = data.collectionBidsInfo || {};
 
         res.status(200).json(

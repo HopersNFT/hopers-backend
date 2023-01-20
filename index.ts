@@ -9,15 +9,13 @@ const INTERVAL = 1000 * 10; // == 10s
 const resultHandler = (data) => {
     Object.keys(data).forEach(async (key) => {
         const value = data[key];
-        await setAsync('cache', key, value);
+        await setAsync('cache', key, JSON.stringify(value));
     });
 };
 
 const startServer = async () => {
     app.listen(port, () => {
         console.log(`Listening to port ${port}`);
-        app.set('cache', {});
-
         setInterval(() => {
             // main(store.setData);
             main(resultHandler);
