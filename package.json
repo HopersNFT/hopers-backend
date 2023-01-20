@@ -30,6 +30,7 @@
         "@cosmjs/cosmwasm-stargate": "^0.27.0",
         "@cosmjs/proto-signing": "^0.27.0",
         "@cosmjs/stargate": "^0.27.0",
+        "@redis/client": "^1.4.2",
         "atob": "^2.1.2",
         "axios": "^0.27.2",
         "btoa": "^1.2.1",
