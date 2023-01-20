@@ -1,4 +1,5 @@
 import { MarketplaceInfo } from '../types';
+import { convertStringToNumber } from './string_numbers';
 
 export const getTokenIdNumber = (id: string): string => {
     if (!id) return '';
@@ -16,8 +17,9 @@ export const buildNFTItem = (
 ) => {
     const customTokenId = collection.customTokenId;
 
-    const tokenNumberStr = Number(getTokenIdNumber(item.token_id));
-    const tokenNumber: number = isNaN(tokenNumberStr) ? 0 : tokenNumberStr;
+    const tokenNumber: number = convertStringToNumber(
+        getTokenIdNumber(item.token_id),
+    );
     const crrItem = {
         ...item,
         ...(customTokenId && {
