@@ -1,23 +1,15 @@
 class Store {
-    private data: symbol;
-    private readonly sym: symbol;
+    private data;
     constructor() {
-        this.data = Symbol.for('data');
+        this.data = {};
     }
     setData = (data: Record<string, any>) => {
-        // this.data = {
-        //     ...this.data,
-        //     ...data,
-        // };
-        const exist = this.getData();
-        (global as any)[this.sym] = {
-            ...exist,
+        this.data = {
+            ...this.data,
             ...data,
         };
     };
-    getData = () => {
-        return (global as any)[this.data];
-    };
+    getData = () => this.data;
 }
 
 const store = new Store();
