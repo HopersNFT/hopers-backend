@@ -1,5 +1,5 @@
 // import store from './store';
-import { setAsync } from './src/config/redis';
+import client from './src/config/redis';
 import { app } from './src/config/express';
 import main from './src/controllers';
 
@@ -9,7 +9,7 @@ const INTERVAL = 1000 * 10; // == 10s
 const resultHandler = (data) => {
     Object.keys(data).forEach(async (key) => {
         const value = data[key];
-        await setAsync('cache', key, JSON.stringify(value));
+        await client.hSet('cache', key, JSON.stringify(value));
     });
 };
 

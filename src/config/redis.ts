@@ -1,5 +1,4 @@
 import { createClient } from 'redis';
-import { promisify } from 'util';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -19,5 +18,4 @@ const client = createClient({
     await client.connect();
 })();
 
-export const getAsync = promisify(client.hGetAll).bind(client);
-export const setAsync = promisify(client.hSet).bind(client);
+export default client;
