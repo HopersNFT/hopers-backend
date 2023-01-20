@@ -1,4 +1,4 @@
-import store from './src/config/store';
+import store from './store';
 import { app } from './src/config/express';
 import main from './src/controllers';
 

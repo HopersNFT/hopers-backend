@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import { catchAsync, pick } from '../utils';
 import * as constants from '../constants';
-import store from '../config/store';
+import store from '../../store';
 
 const routes = express.Router();
 
