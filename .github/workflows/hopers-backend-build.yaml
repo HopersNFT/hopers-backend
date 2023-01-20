@@ -30,16 +30,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: v16.x
+          node-version: v16.19.0
 
       - name: Build Node assets
         env:
           CI: true
           SITE_URL: ${{ inputs.site-url }}
         run: |
-          npm install --global yarn
-          yarn install --frozen-lockfile
-          yarn start
+          npm install
+          npm run start
 
 # Please do not touch the following action
       - name: Store deployment content
@@ -47,7 +46,7 @@ jobs:
         with:
           api-key: ${{ secrets.IONOS_API_KEY }}
           service-host: api-eu.ionos.space
-          project-id: 1fd82d5c-a241-49cb-8659-7e1d6e074fb8
+          project-id: 86cb80c9-a3a8-438f-a142-a954a81db1f9
           branch-id: ${{ inputs.branch-id }}
           version: ${{ github.sha }}
           folder: ${{ env.DEPLOYMENT_FOLDER }}
