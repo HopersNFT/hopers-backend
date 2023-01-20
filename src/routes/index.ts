@@ -5,6 +5,13 @@ import { cache } from '../controllers';
 const routes = express.Router();
 
 routes.get(
+    '/',
+    catchAsync((_req: Request, res: Response) => {
+        res.status(200).json({ success: true });
+    }),
+);
+
+routes.get(
     '/cache',
     catchAsync((req: Request, res: Response) => {
         const query = req.query?.fields || '';
