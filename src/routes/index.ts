@@ -13,5 +13,19 @@ routes.get(
         res.status(200).json(fields.length ? pick(cache, fields) : cache);
     }),
 );
+routes.get(
+    '/collection-bids',
+    catchAsync((req: Request, res: Response) => {
+        const query = req.query?.collectionIds || '';
+        const collectionIds = query ? String(query).split(',') : [];
+        const collectionBidsInfo = cache.collectionBidsInfo || {};
+
+        res.status(200).json(
+            collectionIds.length
+                ? pick(collectionBidsInfo, collectionIds)
+                : collectionBidsInfo,
+        );
+    }),
+);
 
 export { routes };

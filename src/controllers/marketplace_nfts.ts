@@ -70,7 +70,7 @@ const fetchMarketplaceNFTs = async () => {
                     limit: MAX_FETCH_ITEMS,
                 },
             });
-            const fetchedNfts = fetchedResult.asks || [];
+            const fetchedNfts = fetchedResult?.asks || [];
             fetchedNfts.forEach((item: any) => {
                 const crrItem = buildNFTItem(
                     item,
