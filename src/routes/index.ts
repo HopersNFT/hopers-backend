@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import { catchAsync, pick } from '../utils';
 import * as constants from '../constants';
-import store from '../../store';
+// import store from '../../store';
 
 const routes = express.Router();
 
@@ -17,10 +17,10 @@ routes.get(
     catchAsync((req: Request, res: Response) => {
         const query = req.query?.fields || '';
         const fields = query ? String(query).split(',') : [];
+        // const data = store.getData();
+        const data = global.cache;
 
-        res.status(200).json(
-            fields.length ? pick(store.getData(), fields) : store.getData(),
-        );
+        res.status(200).json(fields.length ? pick(data, fields) : data);
     }),
 );
 routes.get(
@@ -28,7 +28,9 @@ routes.get(
     catchAsync((req: Request, res: Response) => {
         const query = req.query?.collectionIds || '';
         const collectionIds = query ? String(query).split(',') : [];
-        const collectionBidsInfo = store.getData().collectionBidsInfo || {};
+        // const data = store.getData();
+        const data = global.cache;
+        const collectionBidsInfo = data.collectionBidsInfo || {};
 
         res.status(200).json(
             collectionIds.length
