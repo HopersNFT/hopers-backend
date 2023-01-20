@@ -1,5 +1,5 @@
 {
-    "name": "fibonacci",
+    "name": "hopers-backend",
     "version": "1.0.0",
     "description": "",
     "main": "src/index.js",
@@ -10,7 +10,7 @@
     },
     "author": "",
     "engines": {
-        "node": "16.13.1"
+        "node": "16.19.0"
     },
     "license": "ISC",
     "devDependencies": {
