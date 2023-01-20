@@ -10,9 +10,7 @@ routes.get(
         const query = req.query?.fields || '';
         const fields = query ? String(query).split(',') : [];
 
-        res.status(200).json({
-            cache: fields.length ? pick(cache, fields) : cache,
-        });
+        res.status(200).json(fields.length ? pick(cache, fields) : cache);
     }),
 );
 

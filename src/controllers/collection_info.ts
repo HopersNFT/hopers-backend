@@ -136,7 +136,7 @@ const fetchCollectionInfo = async () => {
                     limit: MAX_FETCH_ITEMS,
                 },
             });
-            const saleHistoryResult = queryResult?.sale_history;
+            const saleHistoryResult = queryResult?.sale_history || [];
             saleHistory = saleHistory.concat(
                 saleHistoryResult.map((item: any) => ({
                     ...item,

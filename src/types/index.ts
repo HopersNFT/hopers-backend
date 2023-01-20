@@ -6,3 +6,4 @@ export * from './collection';
 export * from './metadata';
 export * from './liquidity';
 export * from './chain';
+export * from './ido';
