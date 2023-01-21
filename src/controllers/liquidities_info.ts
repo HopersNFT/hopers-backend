@@ -1,4 +1,8 @@
-import { convertStringToNumber, runQuery } from '../utils';
+import {
+    convertStringToNumber,
+    getTOkenByContractAddress,
+    runQuery,
+} from '../utils';
 import { Liquidities, TokenStatus } from '../constants';
 import { TPool } from 'src/types';
 
@@ -80,9 +84,11 @@ const fetchLiquiditiesInfo = async () => {
                 const liquidityIndex = stakingQueryIndices[index];
                 const distributionEnd =
                     config?.distribution_schedule?.[0]?.[1] || 0;
+                const rewardTokenContract = config?.reward_token_contract || '';
                 liquidities[liquidityIndex].config = {
                     lockDuration: (config?.lock_duration || 0) * 1e3,
                     distributionEnd: distributionEnd * 1e3,
+                    rewardToken: getTOkenByContractAddress(rewardTokenContract),
                 };
 
                 let totalSupplyInPresale =
