@@ -14,6 +14,13 @@ const main = (resultHandler) => {
         fetchIDOStateInfo().then(resultHandler);
         fetchIDOSaleInfo().then(resultHandler);
         fetchCollectionBidsInfo().then(resultHandler);
+    } catch (err) {
+        console.log('main logic error', err);
+    }
+};
+
+export const extraLogic = (resultHandler) => {
+    try {
         fetchTokenPriceInfo().then(resultHandler);
     } catch (err) {
         console.log('main logic error', err);
