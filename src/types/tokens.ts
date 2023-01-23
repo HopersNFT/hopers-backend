@@ -14,6 +14,10 @@ export enum TokenType {
     RED = 'red',
     BLUE = 'blue',
     WYND = 'wynd',
+    SGNL = 'sgnl',
+    RACCOON = 'raccoon',
+    GLTO = 'glto',
+    AQUA = 'aqua',
 }
 
 export type TokenStatusType = {

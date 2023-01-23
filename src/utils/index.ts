@@ -3,4 +3,4 @@ export * from './query';
 export * from './axios';
 export * from './nft_item';
 export * from './string_numbers';
-export * from './redis';
+export * from './token';
