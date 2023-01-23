@@ -118,3 +118,23 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
             'juno1hnftys64ectjfynm6qjk9my8jd3f6l9dq9utcd3dy8ehwrsx9q4q7n9uxt',
     },
 };
+
+export const TokenCoingeckoIds: { [key in TokenType]: string } = {
+    [TokenType.HOPE]: 'hope-galaxy',
+    [TokenType.JUNO]: 'juno-network',
+    [TokenType.RAW]: '', // junoswap-raw-dao
+    [TokenType.NETA]: 'neta',
+    [TokenType.ATOM]: 'cosmos',
+    [TokenType.USDC]: 'axlusdc',
+    [TokenType.HOPERS]: '',
+    [TokenType.PUNK]: 'juno-punk',
+    [TokenType.HUAHUA]: 'chihuahua-token',
+    [TokenType.CANLAB]: '',
+    [TokenType.RED]: '',
+    [TokenType.BLUE]: '',
+    [TokenType.WYND]: '',
+    [TokenType.SGNL]: 'signal',
+    [TokenType.RACCOON]: '',
+    [TokenType.GLTO]: '',
+    [TokenType.AQUA]: '',
+};
