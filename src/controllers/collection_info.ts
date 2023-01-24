@@ -47,23 +47,21 @@ const fetchCollectionInfo = async () => {
                         nft_address: collection.nftContract,
                     },
                 });
-                if (queryResult) {
-                    storeObject = {
-                        mintCheck: queryResult.check_mint,
-                        mintedNfts: +(queryResult.mint_count || '0'),
-                        totalNfts: +(queryResult.total_nft || '0'),
-                        maxNfts: +(
-                            queryResult.max_nft ||
-                            queryResult.total_nft ||
-                            '0'
-                        ),
-                        imageUrl: queryResult.image_url,
-                        price: +(queryResult.price || '0') / 1e6,
-                        myMintedNfts: null,
-                    };
-                }
-            } catch {
-                // console.error(collection.collectionId, e);
+                storeObject = {
+                    mintCheck: queryResult.check_mint,
+                    mintedNfts: +(queryResult.mint_count || '0'),
+                    totalNfts: +(queryResult.total_nft || '0'),
+                    maxNfts: +(
+                        queryResult.max_nft ||
+                        queryResult.total_nft ||
+                        '0'
+                    ),
+                    imageUrl: queryResult.image_url,
+                    price: +(queryResult.price || '0') / 1e6,
+                    myMintedNfts: null,
+                };
+            } catch (e) {
+                console.error(collection.collectionId, e);
             }
         }
 

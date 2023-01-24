@@ -36,8 +36,8 @@ export const getQuery = async ({
             headers: { 'content-type': 'application/json', ...(headers || {}) },
         });
         return result.data;
-    } catch {
-        console.error('axios error at', url, method);
+    } catch (err) {
+        console.error('axios error at', url, method, err);
         return null;
     }
 };

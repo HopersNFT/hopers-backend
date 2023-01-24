@@ -1,6 +1,6 @@
 import { TokenType } from './tokens';
 
-export type TPoolConfig = {
+type TPoolConfig = {
     lockDuration: number;
     distributionEnd?: number;
     rewardToken?: TokenType;
@@ -12,21 +12,24 @@ export type TPool = {
     token1Reserve: number;
     token2Reserve: number;
     isVerified: boolean;
-    apr: string | string[];
+    apr: string;
     contract: string;
     lpAddress: string;
-    stakingAddress?: string | string[];
+    stakingAddress?: string;
     pool: number;
     ratio: number;
     volume?: number;
     earned?: number;
     balance?: number;
-    config?: TPoolConfig | TPoolConfig[];
+    pendingReward?: number;
+    bonded?: number;
+    totalEarned?: number;
+    config?: TPoolConfig;
 };
 
 export type TLiquidity = {
     tokenA: TokenType;
     tokenB: TokenType;
     contractAddress: string;
-    stakingAddress?: string | string[];
+    stakingAddress?: string;
 };
