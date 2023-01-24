@@ -48,7 +48,7 @@ export const MintLogics: {
                     },
                 };
             } catch (e) {
-                console.log('fetch error', e);
+                // console.log('fetch error', e);
             }
             return storeObject;
         },
@@ -93,7 +93,7 @@ export const MintLogics: {
                     },
                 };
             } catch (e) {
-                console.log('fetch error', e);
+                // console.log('fetch error', e);
             }
             return storeObject;
         },
@@ -126,7 +126,7 @@ export const MintLogics: {
                         myMintedNfts: null,
                     };
             } catch (e) {
-                console.log('fetch error', e);
+                // console.log('fetch error', e);
             }
             return storeObject;
         },
