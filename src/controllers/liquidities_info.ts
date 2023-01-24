@@ -4,7 +4,7 @@ import {
     runQuery,
 } from '../utils';
 import { Liquidities, TokenStatus } from '../constants';
-import { TPool } from 'src/types';
+import { TPool, TPoolConfig } from 'src/types';
 
 const fetchLiquiditiesInfo = async () => {
     const fetchLiquiditiesInfoQueries = Liquidities.map((liquidity) =>
@@ -32,15 +32,21 @@ const fetchLiquiditiesInfo = async () => {
 
                 const stakingAddress = Liquidities[index].stakingAddress;
                 if (stakingAddress) {
-                    stakingQueryIndices.push(index);
-                    fetchStakedLPBalanceQueries.push(
-                        runQuery(lpAddress, {
-                            balance: { address: stakingAddress },
-                        }),
-                    );
-                    fetchConfigQueries.push(
-                        runQuery(stakingAddress, { config: {} }),
-                    );
+                    const stakingAddressArray =
+                        typeof stakingAddress === 'string'
+                            ? [stakingAddress]
+                            : stakingAddress;
+                    stakingAddressArray.forEach((address) => {
+                        stakingQueryIndices.push(index);
+                        fetchStakedLPBalanceQueries.push(
+                            runQuery(lpAddress, {
+                                balance: { address: address },
+                            }),
+                        );
+                        fetchConfigQueries.push(
+                            runQuery(address, { config: {} }),
+                        );
+                    });
                 }
 
                 const token1 = Liquidities[index].tokenA,
@@ -74,22 +80,36 @@ const fetchLiquiditiesInfo = async () => {
                     (stakedLPBalanceResults) =>
                         (stakedLPBalances = stakedLPBalanceResults),
                 )
-                .catch((err2) => console.log(err2));
+                .catch(() => {
+                    console.log('fetch lp balance error');
+                });
             await Promise.all(fetchConfigQueries)
                 .then((configResult) => (configs = configResult))
-                .catch((err2) => console.log(err2));
+                .catch(() => {
+                    console.log('fetch liquidity config error');
+                });
 
             for (let index = 0; index < configs.length; index++) {
-                let config = configs[index];
                 const liquidityIndex = stakingQueryIndices[index];
+                const hasSeveralStakingContract =
+                    typeof Liquidities[liquidityIndex].stakingAddress !==
+                    'string';
+                let config = configs[index];
                 const distributionEnd =
                     config?.distribution_schedule?.[0]?.[1] || 0;
                 const rewardTokenContract = config?.reward_token_contract || '';
-                liquidities[liquidityIndex].config = {
+                const configObject = {
                     lockDuration: (config?.lock_duration || 0) * 1e3,
                     distributionEnd: distributionEnd * 1e3,
                     rewardToken: getTOkenByContractAddress(rewardTokenContract),
                 };
+                liquidities[liquidityIndex].config = hasSeveralStakingContract
+                    ? [
+                          ...((liquidities[liquidityIndex].config ||
+                              []) as TPoolConfig[]),
+                          configObject,
+                      ]
+                    : configObject;
 
                 let totalSupplyInPresale =
                     config?.distribution_schedule?.[0]?.[2] || 0;
@@ -105,22 +125,29 @@ const fetchLiquiditiesInfo = async () => {
                 );
                 stakedLPBalance = isNaN(stakedLPBalance) ? 0 : stakedLPBalance;
 
-                if (hopersReserve && stakedLPBalance && totalLPBalance) {
-                    const apr =
-                        (100 * totalSupplyInPresale) /
-                        ((2 * hopersReserve * stakedLPBalance) /
-                            totalLPBalance);
-                    liquidities[liquidityIndex].apr = `${apr.toLocaleString(
-                        undefined,
-                        {
-                            maximumFractionDigits: 2,
-                        },
-                    )}%`;
+                if (hopersReserve && totalLPBalance) {
+                    const apr = stakedLPBalance
+                        ? (100 * totalSupplyInPresale) /
+                          ((2 * hopersReserve * stakedLPBalance) /
+                              totalLPBalance)
+                        : 0;
+                    const aprString = stakedLPBalance
+                        ? `${apr.toLocaleString(undefined, {
+                              maximumFractionDigits: 2,
+                          })}%`
+                        : '';
+                    liquidities[liquidityIndex].apr = hasSeveralStakingContract
+                        ? [
+                              ...((liquidities[liquidityIndex].apr ||
+                                  []) as string[]),
+                              aprString,
+                          ]
+                        : aprString;
                 }
             }
         })
-        .catch((err) => {
-            console.log(err);
+        .catch(() => {
+            console.log('fetch liquidities info error');
         });
     return { liquiditiesInfo: liquidities };
 };
