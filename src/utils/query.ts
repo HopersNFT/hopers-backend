@@ -28,8 +28,8 @@ export const runQuery = async (
             message,
         );
         return result;
-    } catch (e) {
-        console.log('query error', e);
+    } catch {
+        console.log('query error', contractAddress, message);
         return null;
     }
 };
