@@ -117,6 +117,12 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         contractAddress:
             'juno1hnftys64ectjfynm6qjk9my8jd3f6l9dq9utcd3dy8ehwrsx9q4q7n9uxt',
     },
+	[TokenType.OSMO]: {
+		isNativeCoin: true,
+		isIBCCoin: true,
+		chain: ChainTypes.OSMOSIS,
+		originChain: ChainTypes.OSMOSIS,
+	},
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -137,4 +143,5 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.RACOON]: '',
     [TokenType.GLTO]: '',
     [TokenType.AQUA]: '',
+	[TokenType.OSMO]: "osmosis",
 };

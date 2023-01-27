@@ -3,4 +3,5 @@ export enum ChainTypes {
     COSMOS = 'cosmoshub-4',
     AXELAR = 'axelar',
     CHIHUAHUA = 'chihuahua-1',
+	OSMOSIS = "osmosis-1",
 }
