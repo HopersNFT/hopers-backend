@@ -29,4 +29,5 @@ export type TokenStatusType = {
     chain: ChainTypes;
     coinName?: string;
     decimal?: number;
+  denom?: string;
 };

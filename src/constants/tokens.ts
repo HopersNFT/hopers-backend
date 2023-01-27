@@ -35,10 +35,11 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         originChain: ChainTypes.COSMOS,
     },
     [TokenType.USDC]: {
-        isNativeCoin: true,
+        isNativeCoin: false,
         isIBCCoin: true,
         chain: ChainTypes.AXELAR,
         originChain: ChainTypes.AXELAR,
+        denom:'uusdc'
     },
     [TokenType.HOPERS]: {
         isNativeCoin: false,
