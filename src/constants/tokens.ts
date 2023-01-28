@@ -124,6 +124,27 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
 		chain: ChainTypes.OSMOSIS,
 		originChain: ChainTypes.OSMOSIS,
 	},
+	[TokenType.DRGN]: {
+		isNativeCoin: false,
+		isIBCCoin: false,
+		chain: ChainTypes.JUNO,
+		contractAddress:
+			"juno147t4fd3tny6hws6rha9xs5gah9qa6g7hrjv9tuvv6ce6m25sy39sq6yv52",
+	},
+	[TokenType.BANANA]: {
+		isNativeCoin: false,
+		isIBCCoin: false,
+		chain: ChainTypes.JUNO,
+		contractAddress:
+			"juno1s2dp05rspeuzzpzyzdchk262szehrtfpz847uvf98cnwh53ulx4qg20qwj",
+	},
+	[TokenType.CZAR]: {
+		isNativeCoin: false,
+		isIBCCoin: false,
+		chain: ChainTypes.JUNO,
+		contractAddress:
+			"juno1x02k67asfmjawgc96dj8nxq6se3fmx36gedgs5hvkjegdhfy97rs3jgj2h",
+	},
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -145,4 +166,7 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.GLTO]: '',
     [TokenType.AQUA]: '',
 	[TokenType.OSMO]: "osmosis",
+	[TokenType.DRGN]: "",
+    [TokenType.BANANA]: '',
+    [TokenType.CZAR]: ''
 };

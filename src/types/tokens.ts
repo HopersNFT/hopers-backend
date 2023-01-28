@@ -18,7 +18,10 @@ export enum TokenType {
     RACOON = 'racoon',
     GLTO = 'glto',
     AQUA = 'aqua',
-	OSMO = "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+	  OSMO = "ibc/ED07A3391A112B175915CD8FAF43A2DA8E4790EDE12566649D0C2F97716B8518",
+    DRGN = 'drgn',
+    BANANA = 'banana',
+    CZAR = 'czar',
 }
 
 export type TokenStatusType = {
@@ -29,5 +32,5 @@ export type TokenStatusType = {
     chain: ChainTypes;
     coinName?: string;
     decimal?: number;
-  denom?: string;
+    denom?: string;
 };
