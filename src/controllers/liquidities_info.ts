@@ -63,7 +63,7 @@ const fetchLiquiditiesInfo = async () => {
                     id: index + 1,
                     token1,
                     token2,
-                    isVerified: true,
+                    isVerified: Liquidities[index].isVerified,
                     apr: '',
                     pool,
                     contract: Liquidities[index].contractAddress,

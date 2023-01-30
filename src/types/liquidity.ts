@@ -29,4 +29,5 @@ export type TLiquidity = {
     tokenB: TokenType;
     contractAddress: string;
     stakingAddress?: string | string[];
+    isVerified: boolean;
 };
