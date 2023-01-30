@@ -39,7 +39,7 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         isIBCCoin: true,
         chain: ChainTypes.AXELAR,
         originChain: ChainTypes.AXELAR,
-        denom:'uusdc'
+        denom: 'uusdc',
     },
     [TokenType.HOPERS]: {
         isNativeCoin: false,
@@ -118,38 +118,38 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         contractAddress:
             'juno1hnftys64ectjfynm6qjk9my8jd3f6l9dq9utcd3dy8ehwrsx9q4q7n9uxt',
     },
-	[TokenType.OSMO]: {
-		isNativeCoin: true,
-		isIBCCoin: true,
-		chain: ChainTypes.OSMOSIS,
-		originChain: ChainTypes.OSMOSIS,
-	},
-	[TokenType.DRGN]: {
-		isNativeCoin: false,
-		isIBCCoin: false,
-		chain: ChainTypes.JUNO,
-		contractAddress:
-			"juno147t4fd3tny6hws6rha9xs5gah9qa6g7hrjv9tuvv6ce6m25sy39sq6yv52",
-	},
-	[TokenType.BANANA]: {
-		isNativeCoin: false,
-		isIBCCoin: false,
-		chain: ChainTypes.JUNO,
-		contractAddress:
-			"juno1s2dp05rspeuzzpzyzdchk262szehrtfpz847uvf98cnwh53ulx4qg20qwj",
-	},
-	[TokenType.CZAR]: {
-		isNativeCoin: false,
-		isIBCCoin: false,
-		chain: ChainTypes.JUNO,
-		contractAddress:
-			"juno1x02k67asfmjawgc96dj8nxq6se3fmx36gedgs5hvkjegdhfy97rs3jgj2h",
-	},
-	[TokenType.KUJIRA]: {
-		isNativeCoin: true,
-		isIBCCoin: true,
-		chain: ChainTypes.KUJIRA,
-	},
+    [TokenType.OSMO]: {
+        isNativeCoin: true,
+        isIBCCoin: true,
+        chain: ChainTypes.OSMOSIS,
+        originChain: ChainTypes.OSMOSIS,
+    },
+    [TokenType.DRGN]: {
+        isNativeCoin: false,
+        isIBCCoin: false,
+        chain: ChainTypes.JUNO,
+        contractAddress:
+            'juno147t4fd3tny6hws6rha9xs5gah9qa6g7hrjv9tuvv6ce6m25sy39sq6yv52',
+    },
+    [TokenType.BANANA]: {
+        isNativeCoin: false,
+        isIBCCoin: false,
+        chain: ChainTypes.JUNO,
+        contractAddress:
+            'juno1s2dp05rspeuzzpzyzdchk262szehrtfpz847uvf98cnwh53ulx4qg20qwj',
+    },
+    [TokenType.CZAR]: {
+        isNativeCoin: false,
+        isIBCCoin: false,
+        chain: ChainTypes.JUNO,
+        contractAddress:
+            'juno1x02k67asfmjawgc96dj8nxq6se3fmx36gedgs5hvkjegdhfy97rs3jgj2h',
+    },
+    [TokenType.KUJIRA]: {
+        isNativeCoin: true,
+        isIBCCoin: true,
+        chain: ChainTypes.KUJIRA,
+    },
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -170,9 +170,9 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.RACOON]: '',
     [TokenType.GLTO]: '',
     [TokenType.AQUA]: '',
-	[TokenType.OSMO]: "osmosis",
-	[TokenType.DRGN]: "",
+    [TokenType.OSMO]: 'osmosis',
+    [TokenType.DRGN]: '',
     [TokenType.BANANA]: '',
     [TokenType.CZAR]: '',
-	[TokenType.KUJIRA]: "kujira",
+    [TokenType.KUJIRA]: 'kujira',
 };
