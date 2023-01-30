@@ -4,4 +4,5 @@ export enum ChainTypes {
     AXELAR = 'axelar',
     CHIHUAHUA = 'chihuahua-1',
 	OSMOSIS = "osmosis-1",
+	KUJIRA = "kaiyo-1",
 }

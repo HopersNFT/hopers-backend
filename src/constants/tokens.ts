@@ -145,6 +145,11 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
 		contractAddress:
 			"juno1x02k67asfmjawgc96dj8nxq6se3fmx36gedgs5hvkjegdhfy97rs3jgj2h",
 	},
+	[TokenType.KUJIRA]: {
+		isNativeCoin: true,
+		isIBCCoin: true,
+		chain: ChainTypes.KUJIRA,
+	},
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -168,5 +173,6 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
 	[TokenType.OSMO]: "osmosis",
 	[TokenType.DRGN]: "",
     [TokenType.BANANA]: '',
-    [TokenType.CZAR]: ''
+    [TokenType.CZAR]: '',
+	[TokenType.KUJIRA]: "kujira",
 };

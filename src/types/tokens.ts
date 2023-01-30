@@ -22,6 +22,7 @@ export enum TokenType {
     DRGN = 'drgn',
     BANANA = 'banana',
     CZAR = 'czar',
+	KUJIRA = "ibc/BB6BCDB515050BAE97516111873CCD7BCF1FD0CCB723CC12F3C4F704D6C646CE",
 }
 
 export type TokenStatusType = {
