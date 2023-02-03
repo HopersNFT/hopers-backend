@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "ts-node -r tsconfig-paths/register index",
-        "start-3000": "PORT=3000 ts-node -r tsconfig-paths/register index",
+        "start-5000": "PORT=5000 ts-node -r tsconfig-paths/register index",
         "dev": "PORT=3005 nodemon --watch \"src/**\" --ext \"ts,json\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node index.ts\""
     },
     "author": "",
