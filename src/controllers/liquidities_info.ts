@@ -4,7 +4,7 @@ import {
     runQuery,
 } from '../utils';
 import { Liquidities, TokenStatus } from '../constants';
-import { TPool, TPoolConfig } from 'src/types';
+import { TokenType, TPool, TPoolConfig } from '../types';
 
 const fetchLiquiditiesInfo = async () => {
     const fetchLiquiditiesInfoQueries = Liquidities.map((liquidity) =>
@@ -118,17 +118,22 @@ const fetchLiquiditiesInfo = async () => {
                     ? 0
                     : totalSupplyInPresale;
 
-                const hopersReserve = liquidities[liquidityIndex].token1Reserve;
+                const tokenReserve =
+                    liquidities[liquidityIndex][
+                        configObject.rewardToken === TokenType.HOPERS
+                            ? 'token1Reserve'
+                            : 'token2Reserve'
+                    ];
                 const totalLPBalance = liquidities[liquidityIndex].pool * 1e6;
                 let stakedLPBalance = Number(
                     stakedLPBalances[index]?.balance || 0,
                 );
                 stakedLPBalance = isNaN(stakedLPBalance) ? 0 : stakedLPBalance;
 
-                if (hopersReserve && totalLPBalance) {
+                if (tokenReserve && totalLPBalance) {
                     const apr = stakedLPBalance
                         ? (100 * totalSupplyInPresale) /
-                          ((2 * hopersReserve * stakedLPBalance) /
+                          ((2 * tokenReserve * stakedLPBalance) /
                               totalLPBalance)
                         : 0;
                     const aprString = stakedLPBalance

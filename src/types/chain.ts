@@ -5,4 +5,5 @@ export enum ChainTypes {
     CHIHUAHUA = 'chihuahua-1',
     OSMOSIS = 'osmosis-1',
     KUJIRA = 'kaiyo-1',
+    EVMOS = 'evmos_9001-2',
 }

@@ -150,6 +150,13 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         isIBCCoin: true,
         chain: ChainTypes.KUJIRA,
     },
+    [TokenType.EVMOS]: {
+        isNativeCoin: true,
+        isIBCCoin: true,
+        chain: ChainTypes.EVMOS,
+        originChain: ChainTypes.EVMOS,
+        decimal: 18,
+    },
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -175,4 +182,5 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.BANANA]: '',
     [TokenType.CZAR]: '',
     [TokenType.KUJIRA]: 'kujira',
+    [TokenType.EVMOS]: 'evmos',
 };
