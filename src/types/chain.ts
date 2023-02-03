@@ -6,4 +6,5 @@ export enum ChainTypes {
     OSMOSIS = 'osmosis-1',
     KUJIRA = 'kaiyo-1',
     EVMOS = 'evmos_9001-2',
+	STARGAZE = "stargaze-1",
 }
