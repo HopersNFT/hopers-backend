@@ -200,13 +200,22 @@ export const Liquidities: TLiquidity[] = [
             'juno1e3lr0p957kmpk53dcxtms57vsmmzxcwr4ldwppjdayrhwfpmmzfqmukn6u',
         isVerified: true,
     },
-	{
-		tokenA: TokenType.HOPERS,
-		tokenB: TokenType.STARS,
-		contractAddress:
-			"juno1dwehqyxtez0yegrvvnn8980xjwudnd7yl2zx4x6z4rq6kh74jptq0u98uy",
-		stakingAddress:
-			"juno1cyutdc284up2p57sq8hpj9ux0shvv9cuj7fhxqfgl4vllywge0xsdnsz5u",
-            isVerified: true,
-	},
+    {
+        tokenA: TokenType.HOPERS,
+        tokenB: TokenType.STARS,
+        contractAddress:
+            'juno1dwehqyxtez0yegrvvnn8980xjwudnd7yl2zx4x6z4rq6kh74jptq0u98uy',
+        stakingAddress:
+            'juno1cyutdc284up2p57sq8hpj9ux0shvv9cuj7fhxqfgl4vllywge0xsdnsz5u',
+        isVerified: true,
+    },
+    {
+        tokenA: TokenType.HOPERS,
+        tokenB: TokenType.MARS,
+        contractAddress:
+            'juno1t54zecqjyvkheugfn6xtyf2v0yn7n0ea6458j8p5w4pn2dt8yg0s4a7c03',
+        stakingAddress:
+            'juno1w75f2nwggznhq7kq3xqmkfszp2suc7f0m3stmp5vxx59yvn57ntqkffnn2',
+        isVerified: true,
+    },
 ];

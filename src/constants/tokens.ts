@@ -157,12 +157,18 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         originChain: ChainTypes.EVMOS,
         decimal: 18,
     },
-	[TokenType.STARS]: {
-		isNativeCoin: true,
-		isIBCCoin: true,
-		chain: ChainTypes.STARGAZE,
-		originChain: ChainTypes.STARGAZE,
-	},
+    [TokenType.STARS]: {
+        isNativeCoin: true,
+        isIBCCoin: true,
+        chain: ChainTypes.STARGAZE,
+        originChain: ChainTypes.STARGAZE,
+    },
+    [TokenType.MARS]: {
+        isNativeCoin: true,
+        isIBCCoin: true,
+        chain: ChainTypes.MARS,
+        originChain: ChainTypes.MARS,
+    },
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -189,5 +195,6 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.CZAR]: '',
     [TokenType.KUJIRA]: 'kujira',
     [TokenType.EVMOS]: 'evmos',
-	[TokenType.STARS]: "stargaze",
+    [TokenType.STARS]: 'stargaze',
+    [TokenType.MARS]: '',
 };
