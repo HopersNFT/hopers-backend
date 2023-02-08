@@ -169,6 +169,13 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         chain: ChainTypes.MARS,
         originChain: ChainTypes.MARS,
     },
+    [TokenType.HOWL]: {
+        isNativeCoin: false,
+        isIBCCoin: false,
+        chain: ChainTypes.JUNO,
+        contractAddress:
+            'juno1g0wuyu2f49ncf94r65278puxzclf5arse9f3kvffxyv4se4vgdmsk4dvqz',
+    },
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -197,4 +204,5 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.EVMOS]: 'evmos',
     [TokenType.STARS]: 'stargaze',
     [TokenType.MARS]: '',
+    [TokenType.HOWL]: '',
 };
