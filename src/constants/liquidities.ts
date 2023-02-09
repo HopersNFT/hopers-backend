@@ -223,6 +223,6 @@ export const Liquidities: TLiquidity[] = [
         tokenB: TokenType.HOWL,
         contractAddress:
             'juno14gq07cq43ssk5a07wxkcvfy80n27q075rl7zs0l2eym9f7aa0l5qga9g05',
-        isVerified: true,
+        isVerified: false,
     },
 ];
