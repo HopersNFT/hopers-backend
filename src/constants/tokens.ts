@@ -176,12 +176,19 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         contractAddress:
             'juno1g0wuyu2f49ncf94r65278puxzclf5arse9f3kvffxyv4se4vgdmsk4dvqz',
     },
-	[TokenType.PLANQ]: {
-		isNativeCoin: true,
-		isIBCCoin: true,
-		chain: ChainTypes.PLANQ,
-		originChain: ChainTypes.PLANQ,
-	},
+    [TokenType.PLANQ]: {
+        isNativeCoin: true,
+        isIBCCoin: true,
+        chain: ChainTypes.PLANQ,
+        originChain: ChainTypes.PLANQ,
+    },
+    [TokenType.KLEO]: {
+        isNativeCoin: false,
+        isIBCCoin: false,
+        chain: ChainTypes.JUNO,
+        contractAddress:
+            'juno10gthz5ufgrpuk5cscve2f0hjp56wgp90psqxcrqlg4m9mcu9dh8q4864xy',
+    },
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -211,5 +218,6 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.STARS]: 'stargaze',
     [TokenType.MARS]: '',
     [TokenType.HOWL]: '',
-	[TokenType.PLANQ]: "",
+    [TokenType.PLANQ]: '',
+    [TokenType.KLEO]: '',
 };
