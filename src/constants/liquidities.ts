@@ -230,6 +230,6 @@ export const Liquidities: TLiquidity[] = [
         tokenB: TokenType.KLEO,
         contractAddress:
             'juno13amkjs0mtwpjsz65lpk30pacxhx7jlscwmzq5jegqs583zmk7fkq9c8scx',
-        isVerified: true,
+        isVerified: false,
     },
 ];
