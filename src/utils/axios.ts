@@ -37,7 +37,7 @@ export const getQuery = async ({
         });
         return result.data;
     } catch {
-        console.error('axios error at', url, method);
+        // console.error('axios error at', url, method);
         return null;
     }
 };

@@ -11,7 +11,7 @@ const getMin = (number: number, max?: number): number => {
 
 const fetchCollectionInfo = async () => {
     let collectionInfo: any = store.getData().collectionInfo || {};
-    Collections.forEach(async (collection) => {
+    for (const collection of Collections) {
         let storeObject: CollectionStateType = {
             mintCheck: [],
             mintedNfts: 0,
@@ -159,7 +159,7 @@ const fetchCollectionInfo = async () => {
         await fetchSaleHistory();
         storeObject.saleHistory = saleHistory;
         collectionInfo[collection.collectionId] = storeObject;
-    });
+    }
 
     return { collectionInfo };
 };

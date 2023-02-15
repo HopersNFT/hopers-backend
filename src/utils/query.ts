@@ -29,7 +29,7 @@ export const runQuery = async (
         );
         return result;
     } catch {
-        console.log('query error', contractAddress, message);
+        // console.log('query error', contractAddress, message);
         return null;
     }
 };

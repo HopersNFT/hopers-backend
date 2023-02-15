@@ -24,7 +24,7 @@ const getTraitsStatus = (
 const fetchMarketplaceNFTs = async () => {
     let collectionTraits: any = store.getData().collectionTraits || {},
         marketplaceNFTs: any = store.getData().marketplaceNFTs || {};
-    Collections.forEach(async (collection) => {
+    for (const collection of Collections) {
         let queries: any[] = [];
         let contractAddresses: string[] = [];
         if (
@@ -110,7 +110,7 @@ const fetchMarketplaceNFTs = async () => {
             });
         });
         marketplaceNFTs[collection.collectionId] = fetchedMarketplaceNFTs;
-    });
+    }
 
     return { collectionTraits, marketplaceNFTs };
 };
