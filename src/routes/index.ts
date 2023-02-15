@@ -3,6 +3,9 @@ import { catchAsync, pick } from '../utils';
 import * as constants from '../constants';
 import store from '../../store';
 
+const formatMemoryUsage = (data) =>
+    `${Math.round((data / 1024 / 1024) * 100) / 100} MB`;
+
 const routes = Router();
 
 routes.get(
@@ -35,6 +38,29 @@ routes.get(
                 ? pick(collectionBidsInfo, collectionIds)
                 : collectionBidsInfo,
         );
+    }),
+);
+
+routes.get(
+    '/memory-usage',
+    catchAsync((_req: Request, res: Response) => {
+        const memoryData = process.memoryUsage();
+
+        const memoryUsage = {
+            rss: `${formatMemoryUsage(
+                memoryData.rss,
+            )} -> Resident Set Size - total memory allocated for the process execution`,
+            heapTotal: `${formatMemoryUsage(
+                memoryData.heapTotal,
+            )} -> total size of the allocated heap`,
+            heapUsed: `${formatMemoryUsage(
+                memoryData.heapUsed,
+            )} -> actual memory used during the execution`,
+            external: `${formatMemoryUsage(
+                memoryData.external,
+            )} -> V8 external memory`,
+        };
+        res.status(200).json(memoryUsage);
     }),
 );
 

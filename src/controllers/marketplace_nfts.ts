@@ -5,7 +5,7 @@ import {
     MAX_FETCH_ITEMS,
     MarketplaceContracts,
 } from '../constants';
-import store from 'store';
+import store from '../../store';
 
 const getTraitsStatus = (
     metaData: MetaDataItemType[],

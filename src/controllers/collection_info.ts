@@ -158,7 +158,6 @@ const fetchCollectionInfo = async () => {
         };
         await fetchSaleHistory();
         storeObject.saleHistory = saleHistory;
-        console.log('here', collection.collectionId);
         collectionInfo[collection.collectionId] = storeObject;
     });
 
