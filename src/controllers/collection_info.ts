@@ -1,3 +1,4 @@
+import store from '../../store';
 import { MAX_FETCH_ITEMS } from '../constants';
 import { Collections, MarketplaceContracts, MintContracts } from '../constants';
 import { CollectionStateType, TokenType } from '../types';
@@ -9,7 +10,7 @@ const getMin = (number: number, max?: number): number => {
 };
 
 const fetchCollectionInfo = async () => {
-    let collectionInfo: any = {};
+    let collectionInfo: any = store.getData().collectionInfo || {};
     Collections.forEach(async (collection) => {
         let storeObject: CollectionStateType = {
             mintCheck: [],
@@ -157,6 +158,7 @@ const fetchCollectionInfo = async () => {
         };
         await fetchSaleHistory();
         storeObject.saleHistory = saleHistory;
+        console.log('here', collection.collectionId);
         collectionInfo[collection.collectionId] = storeObject;
     });
 

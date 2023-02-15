@@ -5,7 +5,7 @@ import { getQuery } from '../utils';
 
 dotenv.config();
 
-// const CoinGeckoAPIKey = process.env.COINGECKO_API_KEY;
+const CoinGeckoAPIKey = process.env.COINGECKO_API_KEY;
 
 const initialState: TokenPriceType = (
     Object.keys(TokenType) as Array<keyof typeof TokenType>
@@ -34,18 +34,18 @@ export const fetchTokenPriceInfo = async () => {
             //     TokenCoingeckoIds[key as TokenType]
             //   }`,
             // });
-            fetchQueries.push(
-                getQuery({
-                    url: `https://api.coingecko.com/api/v3/coins/${
-                        TokenCoingeckoIds[key as TokenType]
-                    }`,
-                }),
-            );
             // fetchQueries.push(
             //     getQuery({
-            //         url: `https://pro-api.coingecko.com/api/v3/coins/${crrCoingeckoId}?x_cg_pro_api_key=${CoinGeckoAPIKey}`,
+            //         url: `https://api.coingecko.com/api/v3/coins/${
+            //             TokenCoingeckoIds[key as TokenType]
+            //         }`,
             //     }),
             // );
+            fetchQueries.push(
+                getQuery({
+                    url: `https://pro-api.coingecko.com/api/v3/coins/${crrCoingeckoId}?x_cg_pro_api_key=${CoinGeckoAPIKey}`,
+                }),
+            );
         }
     });
     try {
