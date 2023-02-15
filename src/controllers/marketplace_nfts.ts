@@ -5,6 +5,7 @@ import {
     MAX_FETCH_ITEMS,
     MarketplaceContracts,
 } from '../constants';
+import store from 'store';
 
 const getTraitsStatus = (
     metaData: MetaDataItemType[],
@@ -21,8 +22,8 @@ const getTraitsStatus = (
 };
 
 const fetchMarketplaceNFTs = async () => {
-    let collectionTraits: any = {},
-        marketplaceNFTs: any = {};
+    let collectionTraits: any = store.getData().collectionTraits || {},
+        marketplaceNFTs: any = store.getData().marketplaceNFTs || {};
     Collections.forEach(async (collection) => {
         let queries: any[] = [];
         let contractAddresses: string[] = [];
