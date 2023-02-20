@@ -196,6 +196,26 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         contractAddress:
             'juno1zkwveux7y6fmsr88atf3cyffx96p0c96qr8tgcsj7vfnhx7sal3s3zu3ps',
     },
+    [TokenType.HARBOR]: {
+        isNativeCoin: false,
+        isIBCCoin: true,
+        chain: ChainTypes.COMDEX,
+        originChain: ChainTypes.COMDEX,
+        denom: 'uharbor',
+    },
+    [TokenType.CMDX]: {
+        isNativeCoin: true,
+        isIBCCoin: true,
+        chain: ChainTypes.COMDEX,
+        originChain: ChainTypes.COMDEX,
+    },
+    [TokenType.CMST]: {
+        isNativeCoin: false,
+        isIBCCoin: true,
+        chain: ChainTypes.COMDEX,
+        originChain: ChainTypes.COMDEX,
+        denom: 'ucmst',
+    },
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -228,4 +248,7 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.PLANQ]: '',
     [TokenType.KLEO]: '',
     [TokenType.JAPE]: '',
+    [TokenType.HARBOR]: '',
+    [TokenType.CMDX]: 'cmdx',
+    [TokenType.CMST]: '',
 };

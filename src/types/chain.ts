@@ -8,5 +8,6 @@ export enum ChainTypes {
     EVMOS = 'evmos_9001-2',
     STARGAZE = 'stargaze-1',
     MARS = 'mars-1',
-	PLANQ = "planq_7070-2",
+    PLANQ = 'planq_7070-2',
+    COMDEX = 'comdex-1',
 }
