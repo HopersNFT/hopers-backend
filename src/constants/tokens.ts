@@ -216,6 +216,13 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         originChain: ChainTypes.COMDEX,
         denom: 'ucmst',
     },
+	[TokenType.AXELARETHER]: {
+		isNativeCoin: false,
+		isIBCCoin: true,
+		chain: ChainTypes.AXELAR,
+		originChain: ChainTypes.AXELAR,
+		denom: "weth-wei",
+	},
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -251,4 +258,5 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.HARBOR]: '',
     [TokenType.CMDX]: 'cmdx',
     [TokenType.CMST]: '',
+	[TokenType.AXELARETHER]: "weth",
 };
