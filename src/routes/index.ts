@@ -11,7 +11,9 @@ const routes = Router();
 routes.get(
     '/',
     catchAsync((_req: Request, res: Response) => {
-        res.status(200).json({ success: true, constants });
+        const result = {...constants}
+        delete result.sender;
+        res.status(200).json({ success: true, constants: result });
     }),
 );
 
