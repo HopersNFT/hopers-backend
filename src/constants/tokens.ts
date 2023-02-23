@@ -222,6 +222,7 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
 		chain: ChainTypes.AXELAR,
 		originChain: ChainTypes.AXELAR,
 		denom: "weth-wei",
+        decimal: 18,
 	},
 };
 
