@@ -181,6 +181,7 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         isIBCCoin: true,
         chain: ChainTypes.PLANQ,
         originChain: ChainTypes.PLANQ,
+        decimal: 18,
     },
     [TokenType.KLEO]: {
         isNativeCoin: false,
