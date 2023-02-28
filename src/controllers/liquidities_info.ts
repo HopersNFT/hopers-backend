@@ -98,10 +98,11 @@ const fetchLiquiditiesInfo = async () => {
                 const distributionEnd =
                     config?.distribution_schedule?.[0]?.[1] || 0;
                 const rewardTokenContract = config?.reward_token_contract || '';
+                const rewardTokenDenom = config?.reward_token?.native || '';
                 const configObject = {
                     lockDuration: (config?.lock_duration || 0) * 1e3,
                     distributionEnd: distributionEnd * 1e3,
-                    rewardToken: getTOkenByContractAddress(rewardTokenContract),
+                    rewardToken: getTOkenByContractAddress(rewardTokenContract) || rewardTokenDenom,
                 };
                 liquidities[liquidityIndex].config = hasSeveralStakingContract
                     ? [
