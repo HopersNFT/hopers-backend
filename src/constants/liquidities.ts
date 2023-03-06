@@ -300,6 +300,8 @@ export const Liquidities: TLiquidity[] = [
         tokenB: TokenType.wBTC,
         contractAddress:
             "juno1ppfckgwhw9rjuuerjr2s3cg7qqtsfq55tztxm70zj9dn9l66fxsq6st7ru",
+        stakingAddress: 
+            "juno1nfw269pctu0qfjdw95v7pvp3nevn3nefqz7nngqc25pkjtx225lq2ytmf5",
         isVerified: true
     },
 ];
