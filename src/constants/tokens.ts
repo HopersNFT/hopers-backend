@@ -225,6 +225,14 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
 		denom: "weth-wei",
         decimal: 18,
 	},
+    [TokenType.wBTC]: {
+        isNativeCoin: false,
+        isIBCCoin: true,
+        chain: ChainTypes.AXELAR,
+        originChain: ChainTypes.AXELAR,
+        denom: "wbtc-satoshi",
+        decimal: 8,
+    },
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -261,4 +269,5 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.CMDX]: 'cmdx',
     [TokenType.CMST]: '',
 	[TokenType.ETH]: "weth",
+    [TokenType.wBTC]: "wrapped-bitcoin",
 };
