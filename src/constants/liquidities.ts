@@ -295,5 +295,11 @@ export const Liquidities: TLiquidity[] = [
             "juno1e9lrj679gnyz32neq9zhher3jp270ywmdmnsdqhueukheamw5wlql94suv",
         isVerified: true
     },
-
+    {
+        tokenA: TokenType.HOPERS,
+        tokenB: TokenType.wBTC,
+        contractAddress:
+            "juno1ppfckgwhw9rjuuerjr2s3cg7qqtsfq55tztxm70zj9dn9l66fxsq6st7ru",
+        isVerified: true
+    },
 ];
