@@ -132,7 +132,7 @@ routes.get(
                 },
             };
             return {
-                bondingPeriods,
+                bondingPeriods: bondingPeriods.reverse(),
                 poolId,
                 lpAddress,
                 ratio,
