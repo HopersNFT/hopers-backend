@@ -102,7 +102,9 @@ const fetchLiquiditiesInfo = async () => {
                 const configObject = {
                     lockDuration: (config?.lock_duration || 0) * 1e3,
                     distributionEnd: distributionEnd * 1e3,
-                    rewardToken: getTOkenByContractAddress(rewardTokenContract) || rewardTokenDenom,
+                    rewardToken:
+                        getTOkenByContractAddress(rewardTokenContract) ||
+                        rewardTokenDenom,
                 };
                 liquidities[liquidityIndex].config = hasSeveralStakingContract
                     ? [
@@ -152,8 +154,8 @@ const fetchLiquiditiesInfo = async () => {
                 }
             }
         })
-        .catch(() => {
-            console.log('fetch liquidities info error');
+        .catch((e) => {
+            console.log('fetch liquidities info error: ', e);
         });
     return { liquiditiesInfo: liquidities };
 };

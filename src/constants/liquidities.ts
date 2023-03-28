@@ -6,8 +6,11 @@ export const Liquidities: TLiquidity[] = [
         tokenB: TokenType.JUNO,
         contractAddress:
             'juno1g5j9vd76cqt7fsq22ne7jqfkz4v9ptkvh4jknsvwchpj753atwfs942a25',
-        stakingAddress:
+        stakingAddress: [
             'juno19nnwh49lwsqy6c5wg9p943yt9txe5mw6kdztecl5j4q3rgyh0h0sekwl8c',
+            'juno1sgrj86ax5hkxkujzky2f4ympwmqkx8pxqym4awhz86yyj0etk93srxtupw',
+            'juno1tadnxatw8qhge8jn3pkyq9302xj8rn578y9vtyfnp6laweyal99q0yqyt9',
+        ],
         isVerified: true,
     },
     {
@@ -15,8 +18,11 @@ export const Liquidities: TLiquidity[] = [
         tokenB: TokenType.ATOM,
         contractAddress:
             'juno17estllyc6qyq6tlxg9hv4xwcy069fuu0rmytvkw6xskchcq9czxsd5fd98',
-        stakingAddress:
+        stakingAddress: [
             'juno163upe9ymxtc5fsx0kvrfcyx9e5puu2zhqt82lexrlajzmx9sm79shac88f',
+            'juno1vx4m9ze96hua42fqrxs5vcfru0mk3syacr4medya454z8f94q22shj6gn7',
+            'juno10x9sdvp4q0l489t3ey6u0479hzhqm7uvh8ahlr02z34uw6rljn6sgw8ztd',
+        ],
         isVerified: true,
     },
     {
@@ -24,8 +30,11 @@ export const Liquidities: TLiquidity[] = [
         tokenB: TokenType.USDC,
         contractAddress:
             'juno1pugg623zsg2xanvuumna6y4ca48t0la7pxgtt96ed55rctea47lsqxu36a',
-        stakingAddress:
+        stakingAddress: [
             'juno1vuygss25pehh3rqx0gra09tzfhc32q3clamhdnpq9ueh29dntfmsv9tgds',
+            'juno1a48d5sptfrqjl6gy9ew2v65d9ry93k0335qwahwget8w5njj2masvcd3ld',
+            'juno1ztyqngg75vqylcjaptm2y3ukutmev7yk49hp7cq86zztuumcjr4scclja0',
+        ],
         isVerified: true,
     },
     {
@@ -279,29 +288,36 @@ export const Liquidities: TLiquidity[] = [
     },
     {
         tokenA: TokenType.HOPERS,
-        tokenB: TokenType.ETH, 
-        contractAddress: 
-            "juno1gmwswmysscjpx0ypw6qwvv6nrfu6ag9san00ylxeudv2c9m2vspq8klesp",
-        stakingAddress: 
-            "juno1wcucsy63d6rm0cdc5qt6akd86q8mp08h6pads44802gdgce6arkq4xuuve",
-        isVerified: true
+        tokenB: TokenType.ETH,
+        contractAddress:
+            'juno1gmwswmysscjpx0ypw6qwvv6nrfu6ag9san00ylxeudv2c9m2vspq8klesp',
+        stakingAddress:
+            'juno1wcucsy63d6rm0cdc5qt6akd86q8mp08h6pads44802gdgce6arkq4xuuve',
+        isVerified: true,
     },
     {
         tokenA: TokenType.HOPERS,
-        tokenB: TokenType.PLANQ, 
-        contractAddress: 
-            "juno18klp4t3h5uzg0j5c6ty2z46ccxd3xcpzknzytfzlwlr64tapyd6qahsc0e",
-        stakingAddress: 
-            "juno1e9lrj679gnyz32neq9zhher3jp270ywmdmnsdqhueukheamw5wlql94suv",
-        isVerified: true
+        tokenB: TokenType.PLANQ,
+        contractAddress:
+            'juno18klp4t3h5uzg0j5c6ty2z46ccxd3xcpzknzytfzlwlr64tapyd6qahsc0e',
+        stakingAddress:
+            'juno1e9lrj679gnyz32neq9zhher3jp270ywmdmnsdqhueukheamw5wlql94suv',
+        isVerified: true,
     },
     {
         tokenA: TokenType.HOPERS,
         tokenB: TokenType.wBTC,
         contractAddress:
-            "juno1ppfckgwhw9rjuuerjr2s3cg7qqtsfq55tztxm70zj9dn9l66fxsq6st7ru",
-        stakingAddress: 
-            "juno1nfw269pctu0qfjdw95v7pvp3nevn3nefqz7nngqc25pkjtx225lq2ytmf5",
-        isVerified: true
+            'juno1ppfckgwhw9rjuuerjr2s3cg7qqtsfq55tztxm70zj9dn9l66fxsq6st7ru',
+        stakingAddress:
+            'juno1nfw269pctu0qfjdw95v7pvp3nevn3nefqz7nngqc25pkjtx225lq2ytmf5',
+        isVerified: true,
+    },
+    {
+        tokenA: TokenType.HOPERS,
+        tokenB: TokenType.PHMN,
+        contractAddress:
+            'juno12np0vflkrwp0sfy7dvulafqzw6dawle0kuey5kn5dyqmr32q97esn5d40z',
+        isVerified: false,
     },
 ];

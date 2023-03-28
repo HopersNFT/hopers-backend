@@ -217,21 +217,28 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         originChain: ChainTypes.COMDEX,
         denom: 'ucmst',
     },
-	[TokenType.ETH]: {
-		isNativeCoin: false,
-		isIBCCoin: true,
-		chain: ChainTypes.AXELAR,
-		originChain: ChainTypes.AXELAR,
-		denom: "weth-wei",
+    [TokenType.ETH]: {
+        isNativeCoin: false,
+        isIBCCoin: true,
+        chain: ChainTypes.AXELAR,
+        originChain: ChainTypes.AXELAR,
+        denom: 'weth-wei',
         decimal: 18,
-	},
+    },
     [TokenType.wBTC]: {
         isNativeCoin: false,
         isIBCCoin: true,
         chain: ChainTypes.AXELAR,
         originChain: ChainTypes.AXELAR,
-        denom: "wbtc-satoshi",
+        denom: 'wbtc-satoshi',
         decimal: 8,
+    },
+    [TokenType.PHMN]: {
+        isNativeCoin: false,
+        isIBCCoin: false,
+        chain: ChainTypes.JUNO,
+        contractAddress:
+            'juno1rws84uz7969aaa7pej303udhlkt3j9ca0l3egpcae98jwak9quzq8szn2l',
     },
 };
 
@@ -268,6 +275,7 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.HARBOR]: '',
     [TokenType.CMDX]: 'cmdx',
     [TokenType.CMST]: '',
-	[TokenType.ETH]: "weth",
-    [TokenType.wBTC]: "wrapped-bitcoin",
+    [TokenType.ETH]: 'weth',
+    [TokenType.wBTC]: 'wrapped-bitcoin',
+    [TokenType.PHMN]: '',
 };
