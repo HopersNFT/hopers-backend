@@ -77,6 +77,7 @@ routes.get(
             (liquiditiesInfo[10].token1Reserve /
                 liquiditiesInfo[10].token2Reserve) *
             hopersPrice;
+        console.log('hopersPrice; ', hopersPrice, bluePrice);
         const pools = liquiditiesInfo.map((_liquidity) => {
             let bondingPeriods = [];
             if (_liquidity.stakingAddress) {
@@ -117,7 +118,7 @@ routes.get(
             const token1Price =
                 _liquidity.token1 == 'blue' ? bluePrice : hopersPrice;
             const liquidity = {
-                usd: 0,
+                usd: (token1Price * _liquidity.token1Reserve * 2) / 1000000,
                 token1: {
                     amount: _liquidity.token1Reserve,
                     tokenPrice: token1Price,
@@ -142,7 +143,28 @@ routes.get(
                 liquidity,
             };
         });
-        res.status(200).json(pools);
+        let highestAprPoolId = 0;
+        let highestApr = 0;
+        let highestLiquidityPoolId = 0;
+        let highestLiquidity = 0;
+        for (let i = 0; i < pools.length; i++) {
+            if (pools[i].liquidity.usd > highestLiquidity) {
+                highestLiquidityPoolId = pools[i].poolId;
+                highestLiquidity = pools[i].liquidity.usd;
+            }
+            const { bondingPeriods } = pools[i];
+            if (bondingPeriods.length == 0) continue;
+            const apr = bondingPeriods.sort((a, b) => b - a)[0].apr;
+            if (apr > highestApr) {
+                highestApr = apr;
+                highestAprPoolId = pools[i].poolId;
+            }
+        }
+        res.status(200).json({
+            pools,
+            highestAprPool: highestAprPoolId,
+            highestLiquidity: highestLiquidityPoolId,
+        });
     }),
 );
 
