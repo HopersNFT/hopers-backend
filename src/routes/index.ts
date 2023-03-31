@@ -117,6 +117,10 @@ routes.get(
             const isVerified = _liquidity.isVerified;
             const token1Price =
                 _liquidity.token1 == 'blue' ? bluePrice : hopersPrice;
+            const decimalDiff =
+                (constants.TokenStatus[_liquidity.token2].decimal || 6) -
+                (constants.TokenStatus[_liquidity.token1].decimal || 6);
+            console.log('decimalIDff: ', decimalDiff);
             const liquidity = {
                 usd: (token1Price * _liquidity.token1Reserve * 2) / 1000000,
                 token1: {
@@ -128,7 +132,8 @@ routes.get(
                     amount: _liquidity.token2Reserve,
                     tokenPrice:
                         (_liquidity.token1Reserve / _liquidity.token2Reserve) *
-                        token1Price,
+                        token1Price *
+                        Math.pow(10, decimalDiff),
                     denom: _liquidity.token2,
                 },
             };
