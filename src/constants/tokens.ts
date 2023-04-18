@@ -240,6 +240,12 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         contractAddress:
             'juno1rws84uz7969aaa7pej303udhlkt3j9ca0l3egpcae98jwak9quzq8szn2l',
     },
+    [TokenType.GRDN]: {
+        isNativeCoin: false,
+        isIBCCoin: false,
+        chain: ChainTypes.JUNO,
+        contractAddress: 'juno1xekkh27punj0uxruv3gvuydyt856fax0nu750xns99t2qcxp7xmsqwhfma'
+    }
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -278,4 +284,5 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.ETH]: 'weth',
     [TokenType.wBTC]: 'wrapped-bitcoin',
     [TokenType.PHMN]: '',
+    [TokenType.GRDN]: ''
 };
