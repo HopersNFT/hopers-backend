@@ -323,10 +323,12 @@ export const Liquidities: TLiquidity[] = [
     {
         tokenA: TokenType.HOPERS,
         tokenB: TokenType.GRDN,
-        contractAddress: 'juno1f2uahzf2lajhl3k0lm90w6e8ct55qlmeegnz5jhqhwg9u70pr39q92ha6k',
-        stakingAddress: 'juno1eaatdve6rpdlhs23uxxqd8233crlj82jt0uxpulq0zgrghsu072s4s3rfq',
-        isVerified: true
-    }
+        contractAddress:
+            'juno1f2uahzf2lajhl3k0lm90w6e8ct55qlmeegnz5jhqhwg9u70pr39q92ha6k',
+        stakingAddress:
+            'juno1eaatdve6rpdlhs23uxxqd8233crlj82jt0uxpulq0zgrghsu072s4s3rfq',
+        isVerified: true,
+    },
     {
         tokenA: TokenType.HOPERS,
         tokenB: TokenType.PEPE,
