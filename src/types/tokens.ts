@@ -36,6 +36,10 @@ export enum TokenType {
     ETH = 'ibc/95A45A81521EAFDBEDAEEB6DA975C02E55B414C95AD3CE50709272366A90CA17',
     wBTC = 'ibc/5EF597EA4E863132BFD3E051AC6BAA0175F00913D3256A41F11DC425C39527D6',
     PHMN = 'phmn',
+    GRDN = 'grdn',
+    PEPE = 'pepe',
+    INVDRS = 'invdrs',
+    TEST = 'test',
 }
 
 export type TokenStatusType = {
