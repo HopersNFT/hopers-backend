@@ -120,7 +120,6 @@ routes.get(
             const decimalDiff =
                 (constants.TokenStatus[_liquidity.token2].decimal || 6) -
                 (constants.TokenStatus[_liquidity.token1].decimal || 6);
-            console.log('decimalIDff: ', decimalDiff);
             const liquidity = {
                 usd: (token1Price * _liquidity.token1Reserve * 2) / 1000000,
                 token1: {

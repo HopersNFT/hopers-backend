@@ -202,15 +202,6 @@ export const Liquidities: TLiquidity[] = [
     },
     {
         tokenA: TokenType.HOPERS,
-        tokenB: TokenType.EVMOS,
-        contractAddress:
-            'juno1syfzy9vqkax28t0egf7lep79274f5at6gq4mrk6e2nl5hsren2vsmzrhp2',
-        stakingAddress:
-            'juno1e3lr0p957kmpk53dcxtms57vsmmzxcwr4ldwppjdayrhwfpmmzfqmukn6u',
-        isVerified: true,
-    },
-    {
-        tokenA: TokenType.HOPERS,
         tokenB: TokenType.STARS,
         contractAddress:
             'juno1dwehqyxtez0yegrvvnn8980xjwudnd7yl2zx4x6z4rq6kh74jptq0u98uy',
