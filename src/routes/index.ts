@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express';
-import { catchAsync, pick } from '../utils';
+import { catchAsync, convertToBigInt, pick } from '../utils';
 import * as constants from '../constants';
 import store from '../../store';
 
@@ -123,16 +123,16 @@ routes.get(
             const liquidity = {
                 usd: (token1Price * _liquidity.token1Reserve * 2) / 1000000,
                 token1: {
-                    amount: _liquidity.token1Reserve,
-                    tokenPrice: token1Price,
+                    amount: convertToBigInt(_liquidity.token1Reserve),
+                    tokenPrice: convertToBigInt(token1Price),
                     denom: _liquidity.token1,
                 },
                 token2: {
-                    amount: _liquidity.token2Reserve,
+                    amount: convertToBigInt(_liquidity.token2Reserve),
                     tokenPrice:
-                        (_liquidity.token1Reserve / _liquidity.token2Reserve) *
+                        convertToBigInt((_liquidity.token1Reserve / _liquidity.token2Reserve) *
                         token1Price *
-                        Math.pow(10, decimalDiff),
+                        Math.pow(10, decimalDiff)),
                     denom: _liquidity.token2,
                 },
             };
