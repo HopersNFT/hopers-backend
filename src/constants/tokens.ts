@@ -261,13 +261,13 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         contractAddress:
             'juno1jwdy7v4egw36pd84aeks3ww6n8k7zhsumd4ac8q5lts83ppxueus4626e8',
     },
-    [TokenType.TEST]: {
-        isNativeCoin: false,
-        isIBCCoin: false,
-        chain: ChainTypes.JUNO,
-        contractAddress:
-            'juno18ns4xg5x4p8vnk58xv2vwhjrj0pj752safnnrlkzewr7lvwuvz7sv2fc73',
-    },
+    // [TokenType.TEST]: {
+    //     isNativeCoin: false,
+    //     isIBCCoin: false,
+    //     chain: ChainTypes.JUNO,
+    //     contractAddress:
+    //         'juno18ns4xg5x4p8vnk58xv2vwhjrj0pj752safnnrlkzewr7lvwuvz7sv2fc73',
+    // },
 };
 
 export const TokenCoingeckoIds: { [key in TokenType]: string } = {
@@ -309,5 +309,5 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.GRDN]: '',
     [TokenType.PEPE]: '',
     [TokenType.INVDRS]: '',
-    [TokenType.TEST]: '',
+    // [TokenType.TEST]: '',
 };

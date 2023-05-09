@@ -117,22 +117,23 @@ routes.get(
             const isVerified = _liquidity.isVerified;
             const token1Price =
                 _liquidity.token1 == 'blue' ? bluePrice : hopersPrice;
-            const decimalDiff =
-                (constants.TokenStatus[_liquidity.token2].decimal || 6) -
-                (constants.TokenStatus[_liquidity.token1].decimal || 6);
+
+            const token1Decimal = (constants.TokenStatus[_liquidity.token1].decimal || 6);
+            const token2Decimal = (constants.TokenStatus[_liquidity.token2].decimal || 6)
+            const decimalDiff = token2Decimal - token1Decimal;
             const liquidity = {
                 usd: (token1Price * _liquidity.token1Reserve * 2) / 1000000,
                 token1: {
-                    amount: convertToBigInt(_liquidity.token1Reserve),
-                    tokenPrice: convertToBigInt(token1Price),
+                    amount: convertToBigInt(_liquidity.token1Reserve, 18 - token1Decimal),
+                    tokenPrice: convertToBigInt(token1Price, 18 - token1Decimal),
                     denom: _liquidity.token1,
                 },
                 token2: {
-                    amount: convertToBigInt(_liquidity.token2Reserve),
+                    amount: convertToBigInt(_liquidity.token2Reserve, 18 - token2Decimal),
                     tokenPrice:
                         convertToBigInt((_liquidity.token1Reserve / _liquidity.token2Reserve) *
                         token1Price *
-                        Math.pow(10, decimalDiff)),
+                        Math.pow(10, decimalDiff), 18 - token2Decimal),
                     denom: _liquidity.token2,
                 },
             };
