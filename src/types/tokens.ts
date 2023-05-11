@@ -37,7 +37,7 @@ export enum TokenType {
     wBTC = 'ibc/5EF597EA4E863132BFD3E051AC6BAA0175F00913D3256A41F11DC425C39527D6',
     PHMN = 'phmn',
     GRDN = 'grdn',
-    PEPE = 'pepe',
+    PEPEC = 'pepec',
     INVDRS = 'invdrs',
     // TEST = 'test',
 }
