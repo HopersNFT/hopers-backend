@@ -247,7 +247,7 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         contractAddress:
             'juno1xekkh27punj0uxruv3gvuydyt856fax0nu750xns99t2qcxp7xmsqwhfma',
     },
-    [TokenType.PEPE]: {
+    [TokenType.PEPEC]: {
         isNativeCoin: false,
         isIBCCoin: false,
         chain: ChainTypes.JUNO,
@@ -307,7 +307,7 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.wBTC]: 'wrapped-bitcoin',
     [TokenType.PHMN]: '',
     [TokenType.GRDN]: '',
-    [TokenType.PEPE]: '',
+    [TokenType.PEPEC]: '',
     [TokenType.INVDRS]: '',
     // [TokenType.TEST]: '',
 };

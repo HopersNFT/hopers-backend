@@ -322,7 +322,7 @@ export const Liquidities: TLiquidity[] = [
     },
     {
         tokenA: TokenType.HOPERS,
-        tokenB: TokenType.PEPE,
+        tokenB: TokenType.PEPEC,
         contractAddress:
             'juno14wl7lwg6e65kgvtpz0sfynp7m2mnludz3vvyqlhxq49xg7xj895s9ftjle',
         stakingAddress:
