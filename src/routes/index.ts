@@ -82,8 +82,19 @@ routes.get(
             let bondingPeriods = [];
             if (_liquidity.stakingAddress) {
                 if (typeof _liquidity.stakingAddress == 'string') {
+                    console.log(
+                        _liquidity.apr
+                            .replace('%', '')
+                            .replace(',', '')
+                            .replace(',', ''),
+                    );
                     bondingPeriods.push({
-                        apr: Number(_liquidity.apr.replace('%', '')),
+                        apr: Number(
+                            _liquidity.apr
+                                .replace('%', '')
+                                .replace(',', '')
+                                .replace(',', ''),
+                        ),
                         stakingAddress: _liquidity.stakingAddress,
                         rewardToken: _liquidity.config.rewardToken,
                         lockDuration: _liquidity.config.lockDuration,
@@ -118,22 +129,35 @@ routes.get(
             const token1Price =
                 _liquidity.token1 == 'blue' ? bluePrice : hopersPrice;
 
-            const token1Decimal = (constants.TokenStatus[_liquidity.token1].decimal || 6);
-            const token2Decimal = (constants.TokenStatus[_liquidity.token2].decimal || 6)
+            const token1Decimal =
+                constants.TokenStatus[_liquidity.token1].decimal || 6;
+            const token2Decimal =
+                constants.TokenStatus[_liquidity.token2].decimal || 6;
             const decimalDiff = token2Decimal - token1Decimal;
             const liquidity = {
                 usd: (token1Price * _liquidity.token1Reserve * 2) / 1000000,
                 token1: {
-                    amount: convertToBigInt(_liquidity.token1Reserve, 18 - token1Decimal),
-                    tokenPrice: convertToBigInt(token1Price, 18 - token1Decimal),
+                    amount: convertToBigInt(
+                        _liquidity.token1Reserve,
+                        18 - token1Decimal,
+                    ),
+                    tokenPrice: convertToBigInt(
+                        token1Price,
+                        18 - token1Decimal,
+                    ),
                     denom: _liquidity.token1,
                 },
                 token2: {
-                    amount: convertToBigInt(_liquidity.token2Reserve, 18 - token2Decimal),
-                    tokenPrice:
-                        convertToBigInt((_liquidity.token1Reserve / _liquidity.token2Reserve) *
-                        token1Price *
-                        Math.pow(10, decimalDiff), 18 - token2Decimal),
+                    amount: convertToBigInt(
+                        _liquidity.token2Reserve,
+                        18 - token2Decimal,
+                    ),
+                    tokenPrice: convertToBigInt(
+                        (_liquidity.token1Reserve / _liquidity.token2Reserve) *
+                            token1Price *
+                            Math.pow(10, decimalDiff),
+                        18 - token2Decimal,
+                    ),
                     denom: _liquidity.token2,
                 },
             };
