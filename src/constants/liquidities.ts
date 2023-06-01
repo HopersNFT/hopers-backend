@@ -344,7 +344,7 @@ export const Liquidities: TLiquidity[] = [
         contractAddress:
             'juno1h8fprzdjhczamntxmsj3mdjn6ecm2xdr3fus7tls8tuvlhavw5gscgjucp',
         stakingAddress:
-            'juno1xgcnwv6drunnxrna2xdejtl6swsv7w569h5l6cpm2ln69n4m6x8s7e3vx8',
+            'juno1ywav8j0p5azx7zn4cg6amwhlnt85a8h5x0ah55ge40lhhysg66pq6x2653',
         isVerified: true,
     },
     // {
