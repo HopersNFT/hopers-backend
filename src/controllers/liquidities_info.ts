@@ -140,10 +140,12 @@ const fetchLiquiditiesInfo = async () => {
                               totalLPBalance)
                         : 0;
                     const aprString = stakedLPBalance
-                        ? `${apr.toLocaleString(undefined, {
+                        ? `${apr.toLocaleString('en-us', {
                               maximumFractionDigits: 2,
                           })}%`
                         : '';
+
+                    // console.log(apr);
                     liquidities[liquidityIndex].apr = hasSeveralStakingContract
                         ? [
                               ...((liquidities[liquidityIndex].apr ||
