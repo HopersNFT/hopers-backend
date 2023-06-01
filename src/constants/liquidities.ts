@@ -338,6 +338,15 @@ export const Liquidities: TLiquidity[] = [
             'juno16ucasycq3wzq7uj993wqldz72uw6ffjk7rvl6n6aw0s4yy50frnqx8ss86',
         isVerified: true,
     },
+    {
+        tokenA: TokenType.HOPERS,
+        tokenB: TokenType.INCEL,
+        contractAddress:
+            'juno1h8fprzdjhczamntxmsj3mdjn6ecm2xdr3fus7tls8tuvlhavw5gscgjucp',
+        stakingAddress:
+            'juno1xgcnwv6drunnxrna2xdejtl6swsv7w569h5l6cpm2ln69n4m6x8s7e3vx8',
+        isVerified: true,
+    },
     // {
     //     tokenA: TokenType.HOPERS,
     //     tokenB: TokenType.TEST,

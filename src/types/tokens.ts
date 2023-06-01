@@ -39,6 +39,7 @@ export enum TokenType {
     GRDN = 'grdn',
     PEPEC = 'pepec',
     INVDRS = 'invdrs',
+    INCEL = 'incel',
     // TEST = 'test',
 }
 
