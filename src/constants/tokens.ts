@@ -261,6 +261,13 @@ export const TokenStatus: { [key in TokenType]: TokenStatusType } = {
         contractAddress:
             'juno1jwdy7v4egw36pd84aeks3ww6n8k7zhsumd4ac8q5lts83ppxueus4626e8',
     },
+    [TokenType.INCEL]: {
+        isNativeCoin: false,
+        isIBCCoin: false,
+        chain: ChainTypes.JUNO,
+        contractAddress:
+            'juno14svyeptntwfflqucwz2f2g0cawjnn550yldcheevv50zw08kcdksgg0asj',
+    },
     // [TokenType.TEST]: {
     //     isNativeCoin: false,
     //     isIBCCoin: false,
@@ -309,5 +316,6 @@ export const TokenCoingeckoIds: { [key in TokenType]: string } = {
     [TokenType.GRDN]: '',
     [TokenType.PEPEC]: '',
     [TokenType.INVDRS]: '',
+    [TokenType.INCEL]: '',
     // [TokenType.TEST]: '',
 };
