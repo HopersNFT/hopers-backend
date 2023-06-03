@@ -343,8 +343,10 @@ export const Liquidities: TLiquidity[] = [
         tokenB: TokenType.INCEL,
         contractAddress:
             'juno1h8fprzdjhczamntxmsj3mdjn6ecm2xdr3fus7tls8tuvlhavw5gscgjucp',
-        stakingAddress:
+        stakingAddress: [
             'juno1ywav8j0p5azx7zn4cg6amwhlnt85a8h5x0ah55ge40lhhysg66pq6x2653',
+            'juno1gpkwk0galn7zuvwt57807u8a0k8t4gnludej9m4g6n3hkgrzv95qgqwzyk',
+        ],
         isVerified: true,
     },
     // {
