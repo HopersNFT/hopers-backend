@@ -105,7 +105,10 @@ routes.get(
                         (_stakingAddress, index) => {
                             bondingPeriods.push({
                                 apr: Number(
-                                    _liquidity.apr[index].replace('%', ''),
+                                    _liquidity.apr[index]
+                                        .replace('%', '')
+                                        .replace(',', '')
+                                        .replace(',', ''),
                                 ),
                                 stakingAddress:
                                     _liquidity.stakingAddress[index],
