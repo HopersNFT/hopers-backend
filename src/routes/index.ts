@@ -70,24 +70,16 @@ routes.get(
     '/pool-info',
     catchAsync((_req: Request, res: Response) => {
         const { liquiditiesInfo } = pick(store.getData(), ['liquiditiesInfo']);
-        // if (!liquiditiesInfo) retu
         const hopersPrice =
             liquiditiesInfo[2].token2Reserve / liquiditiesInfo[2].token1Reserve;
         const bluePrice =
             (liquiditiesInfo[10].token1Reserve /
                 liquiditiesInfo[10].token2Reserve) *
             hopersPrice;
-        console.log('hopersPrice; ', hopersPrice, bluePrice);
         const pools = liquiditiesInfo.map((_liquidity) => {
             let bondingPeriods = [];
             if (_liquidity.stakingAddress) {
                 if (typeof _liquidity.stakingAddress == 'string') {
-                    console.log(
-                        _liquidity.apr
-                            .replace('%', '')
-                            .replace(',', '')
-                            .replace(',', ''),
-                    );
                     bondingPeriods.push({
                         apr: Number(
                             _liquidity.apr

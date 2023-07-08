@@ -40,6 +40,8 @@ export enum TokenType {
     PEPEC = 'pepec',
     INVDRS = 'invdrs',
     INCEL = 'incel',
+    CASA = 'casa',
+    EMPWR = 'empwr',
     // TEST = 'test',
 }
 

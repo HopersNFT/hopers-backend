@@ -1,4 +1,4 @@
-export const rpcEndpoint = 'https://rpc-juno.itastakers.com:443';
+export const rpcEndpoint = 'https://rpc.juno.basementnodes.ca';
 
 export const sender = {
     mnemonic:
