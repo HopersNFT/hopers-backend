@@ -349,6 +349,24 @@ export const Liquidities: TLiquidity[] = [
         ],
         isVerified: true,
     },
+    {
+        tokenA: TokenType.HOPERS,
+        tokenB: TokenType.EMPWR,
+        contractAddress:
+            'juno1e63w8uwy7f0zqhp8qnvlkw65ry4d3209hdh5fl0v6ghahh63l0gqwtzlzt',
+        stakingAddress:
+            'juno1h6jr7g05dlp4kmd8z966v4v66z5fvkl4r5lqnutrgr7mvkl2enhsgakpvp',
+        isVerified: true,
+    },
+    {
+        tokenA: TokenType.HOPERS,
+        tokenB: TokenType.CASA,
+        contractAddress:
+            'juno1sa27stdxvwtmzdtdfrryre0tc6z97h6ay3nap94tjaf0xlhu66squf33mt',
+        stakingAddress:
+            'juno18dntranjq6ndyy0fyl8tkl5ltv9z9rgyem4g2cs6q5axzvefgn0skc98vv',
+        isVerified: true,
+    },
     // {
     //     tokenA: TokenType.HOPERS,
     //     tokenB: TokenType.TEST,
